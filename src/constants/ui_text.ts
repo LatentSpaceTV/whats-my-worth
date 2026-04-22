@@ -111,5 +111,6 @@ export const UI_TEXT = {
     exportButton: "PDF Export",
     shareButton: "Teilen",
     etfSubtext: "Simulierter Sparplan zur Deckung der Pensionslücke."
-  }
+  },
+  version: "0.1.0"
 };

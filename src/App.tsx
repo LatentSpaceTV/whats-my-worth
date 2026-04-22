@@ -636,7 +636,7 @@ export default function App() {
               <Share2 size={16} />
               {UI_TEXT.footer.shareButton}
             </button>
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Build v1.2.4</span>
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Build v{UI_TEXT.version}</span>
         </div>
       </footer>
     </div>
