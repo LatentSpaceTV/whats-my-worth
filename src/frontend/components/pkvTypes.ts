@@ -1,0 +1,42 @@
+export type PKVPlan = 'basis' | 'standard' | 'premium' | 'individual' | 'voluntaryGkv';
+
+export interface SharedStateProps {
+  besoldungGroup: string;
+  setBesoldungGroup: (v: string) => void;
+  besoldungStep: number;
+  setBesoldungStep: (v: number) => void;
+  entgeltGroup: string;
+  setEntgeltGroup: (v: string) => void;
+  entgeltStep: number;
+  setEntgeltStep: (v: number) => void;
+  employeeGrossType: 'custom' | 'tarif';
+  setEmployeeGrossType: (v: 'custom' | 'tarif') => void;
+  customEmployeeGross: number;
+  setCustomEmployeeGross: (v: number) => void;
+  pkvPlan: PKVPlan;
+  setPkvPlan: (v: PKVPlan) => void;
+  customPkvAdult: number;
+  setCustomPkvAdult: (v: number) => void;
+  customPflegeAdult: number;
+  setCustomPflegeAdult: (v: number) => void;
+  customPkvKid: number;
+  setCustomPkvKid: (v: number) => void;
+  customPflegeKid: number;
+  setCustomPflegeKid: (v: number) => void;
+  pkvCost: number;
+  pkvCostBreakdown: { health: number; care: number };
+  children: number;
+  setChildren: (v: number) => void;
+  location: string;
+  setLocation: (v: string) => void;
+  hometown: string;
+  setHometown: (v: string) => void;
+  isMarried: boolean;
+  setIsMarried: (v: boolean) => void;
+  etfRate: number;
+  setEtfRate: (v: number) => void;
+  customBonus: number;
+  setCustomBonus: (v: number) => void;
+  companyPension: number;
+  setCompanyPension: (v: number) => void;
+}

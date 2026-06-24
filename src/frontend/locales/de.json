@@ -1,0 +1,309 @@
+{
+  "header": {
+    "title": "What's my worth?",
+    "subtitle": "",
+    "tabs": {
+      "beamterToEmployee": "Beamter ⮕ Arbeitnehmer",
+      "employeeToBeamter": "Arbeitnehmer ⮕ Beamter",
+      "careerPath": "Laufbahn"
+    }
+  },
+  "form": {
+    "entgeltGroup": "Entgeltgruppe (TV-L)",
+    "besoldungGroup": "Besoldungsgruppe",
+    "besoldungGroupHint": "Bestimmt durch Ihr Amt und Ihren Dienstposten (z.B. A13).",
+    "step": "Stufe",
+    "stepHint": "Erfahrungsstufen steigen mit zunehmender Dienstzeit an.",
+    "stepLabel": "Stufe",
+    "grossBaseLabel": "Grundgehalt (Brutto)",
+    "familienzuschlag": "Familienzuschlag",
+    "employer": "Dienstherr",
+    "employerHint": "Bestimmt die Beihilferegelungen und Besoldungstabellen (z.B. Bund, NRW).",
+    "mietstufe": "Mietstufe",
+    "mietstufeHint": "Beeinflusst den Familienzuschlag je nach regionalen Wohnkosten.",
+    "maritalStatus": "Familienstand",
+    "maritalStatusHint": "Verheiratete Beamte erhalten einen höheren Familienzuschlag.",
+    "maritalOptions": {
+      "married": "Verheiratet",
+      "single": "Ledig"
+    },
+    "children": "Kinder",
+    "childrenHint": "Beeinflusst den Familienzuschlag und die Beihilfequote (ab 2. Kind).",
+    "childrenLabel": "Kinder",
+    "pkvLabel": "Krankenvers. Beitrag (100%)",
+    "etfRateLabel": "ETF Rendite (p.a.)",
+    "etfRateHint": "Erwartete jährliche Rendite zur Deckung der Rentenlücke (Konservativ ~4%).",
+    "customBonusLabel": "Sonstige Zulagen (mtl.)",
+    "customBonusHint": "Stellen- oder Leistungszulagen (z.B. Strukturzulage).",
+    "companyPensionLabel": "Betriebl. Altersvorsorge (mtl.)",
+    "companyPensionHint": "Monatlicher Eigenanteil an der Entgeltumwandlung im Angestelltenverhältnis.",
+    "sections": {
+      "position": "Position & Status",
+      "health": "Krankenversicherung",
+      "retirement": "Altersvorsorge"
+    },
+    "career": {
+      "pathLabel": "Karriere-Pfad / Position",
+      "pathInfo": "Progression durch alle Stufen der gewählten Gruppe.",
+      "title": "Lebenslaufbahn-Vergleich",
+      "subtitle": "Kumuliertes verfügbares Einkommen über 40 Jahre",
+      "beamterLabel": "Beamter (Laufbahn)",
+      "employeeLabel": "Angestellter (Laufbahn)",
+      "xAxisLabel": "Berufsjahr",
+      "yAxisLabel": "Kumuliert (Euro)",
+      "disclaimer": "Die Progression erfolgt konservativ innerhalb der gewählten Besoldungs- bzw. Entgeltgruppe.",
+      "lifetimeLabel": "Total Lebensverdienst (Netto)",
+      "statusLabel": "Status",
+      "averageLabel": "∅ Jährlich (Netto)",
+      "matchedLabel": "Vergleichsgruppe"
+    },
+    "pkv": {
+      "label": "Absicherung (Krankenvers. + Pflege)",
+      "hint": "Wählen Sie ein Leistungspaket für Ihre private Versicherung.",
+      "options": {
+        "basis": "Basis",
+        "standard": "Standard",
+        "premium": "Premium",
+        "voluntaryGkv": "Freiwillige GKV",
+        "individual": "Individual (Benutzerdefiniert)"
+      },
+      "freeKids": "Kinder kostenfrei",
+      "adultLabel": "Erw",
+      "kidLabel": "Kind",
+      "adultHealth": "Krankenvers. Erwachsener",
+      "adultCare": "Pflege Erwachsener",
+      "kidHealth": "Krankenvers. pro Kind",
+      "kidCare": "Pflege pro Kind",
+      "preview": "Detail-Vorschau",
+      "adultHealthHint": "Ihr monatlicher PKV-Beitrag für die Krankheitskostenvollversicherung (vor Beihilfe).",
+      "adultCareHint": "Ihr monatlicher Beitrag für die Pflegepflichtversicherung (vor Beihilfe).",
+      "kidHealthHint": "Monatlicher PKV-Beitrag pro Kind für die Krankheitskosten (vor Beihilfe).",
+      "kidCareHint": "Monatlicher Beitrag pro Kind für die Pflegeversicherung (vor Beihilfe).",
+      "previewHealth": "Krankenvers.",
+      "previewCare": "PV",
+      "previewTotal": "Gesamt",
+      "previewAdult": "Erwachsener",
+      "previewKidN": "Kind {n}",
+      "previewSum": "Summe",
+      "previewKid": "Kind"
+    },
+    "careerPaths": {
+      "hoher": {
+        "title": "🟥 Höherer Dienst (hD)",
+        "roles": [
+          { "label": "Studienrat / Rat / Regierungsrat" },
+          { "label": "Regierungsrat (hD) / Oberstudienrat" },
+          { "label": "Regierungsdirektor / Studiendirektor" },
+          { "label": "Leit. Regierungsdirektor / Schulleiter" },
+          { "label": "Richter / Staatsanwalt R1" },
+          { "label": "Richter / Staatsanwalt R2" },
+          { "label": "Ministerialrat B2" },
+          { "label": "Ministerialdirigent B3" }
+        ]
+      },
+      "gehobener": {
+        "title": "🟨 Gehobener Dienst (gD)",
+        "roles": [
+          { "label": "Verwaltungsinspektor / Steuerinspektor" },
+          { "label": "Oberinspektor / Polizeikommissar" },
+          { "label": "Amtmann / Steueroberinspektor" },
+          { "label": "Amtsrat / Lehrer (Grundschule)" },
+          { "label": "Oberamtsrat" }
+        ]
+      },
+      "mittlerer": {
+        "title": "🟦 Mittlerer Dienst (mD)",
+        "roles": [
+          { "label": "Polizeimeister / Justizfachwirt" },
+          { "label": "Polizeiobermeister / Sachbearbeiter" },
+          { "label": "Polizeihauptmeister / Justiz-Endamt" }
+        ]
+      }
+    },
+    "breakdown": {
+      "grossNetBase": "Grundgehalt (Netto-Basis)",
+      "allowances": "Zulagen (Familie & Ort)",
+      "pkvDeduction": "Abzug Krankenvers.",
+      "disposableIncome": "Verfügbares Netto"
+    },
+    "benefitsTitle": "Beamten-Vorteile",
+    "benefitsList": [
+      "Unkündbarkeit (Lebenszeit)",
+      "Beihilfeanspruch (50-70%)",
+      "Familienzuschlag inkludiert"
+    ]
+  },
+  "results": {
+    "hero": {
+      "titleBeamter": "Benötigtes Äquivalent (Beamter)",
+      "titleEmployee": "Benötigtes Brutto (Arbeitnehmer)",
+      "yearSuffix": "/ Jahr",
+      "description": "Um die gleiche Lebensqualität und Altersvorsorge privat zu erreichen.",
+      "factorLabel": "Brutto-Faktor",
+      "factorSubtext": "Relativ zum Beamtensold",
+      "entgeltGroupLabel": "Ca. Entgeltgruppe",
+      "entgeltGroupSource": "(TV-L)"
+    },
+    "heatmap": {
+      "title": "Besoldungsvergleich-Heatmap (Absolute Netto-Distanz)",
+      "subtitle": "Zeigt den absoluten Unterschied (die absolute Distanz) im verfügbaren Nettoeinkommen zwischen den Besoldungsgruppen/Stufen und Ihrem aktuellen Netto. Kleinere Zahlen bedeuten eine präzisere Übereinstimmung.",
+      "legend": {
+        "lower": "Hervorragend (≤ 150 € Abweichung)",
+        "match": "Gute Übereinstimmung (150 € - 300 €)",
+        "higher": "Mittlere Abweichung (300 € - 600 €)",
+        "na": "Unbelegt",
+        "bestMatch": "Bester Match",
+        "large": "Große Abweichung (> 600 €)"
+      },
+      "selectedDetails": "Ausgewählte Stufe",
+      "details": {
+        "noDetails": "Keine Details verfügbar",
+        "basicGross": "Grundgehalt (Brutto)",
+        "familyAllowance": "Familienzuschlag",
+        "tax": "Lohnsteuer (mtl.)",
+        "healthCare": "Kranken- & Pflegevers.",
+        "payoutNet": "Auszahlungsbetrag (Netto)",
+        "disposableNet": "Disponibles Netto",
+        "comparisonLabel": "Vergleich zu Angestellter",
+        "gainText": "Dieses Beamtenofferte bietet ein höheres verfügbares Nettoeinkommen.",
+        "lossText": "Sie würden Einbußen erleiden."
+      }
+    },
+    "charts": {
+      "distributionTitle": "Verteilung Arbeitnehmer-Brutto",
+      "structureTitle": "Kostenstruktur",
+      "structureLegend": {
+        "beamter": "Beamter",
+        "employee": "Arbeitnehmer"
+      },
+      "pieLabels": {
+        "net": "Netto-Erhalt",
+        "social": "Sozialabgaben",
+        "tax": "Steuern",
+        "pkv": "Krankenvers.",
+        "pension": "ETF Depot",
+        "kv": "Krankenvers.",
+        "pv": "Pflegevers.",
+        "rv": "Rentenvers.",
+        "av": "Arbeitslosenvers."
+      }
+    },
+    "table": {
+      "title": "Monatliche Aufschlüsselung",
+      "subtitle": "Äquivalente Vorsorge",
+      "columns": {
+        "category": "Kategorie",
+        "beamter": "Beamter",
+        "employee": "Arbeitnehmer"
+      },
+      "rows": {
+        "gross": {
+          "label": "Brutto-Gehalt (Monat)"
+        },
+        "base_salary": {
+          "label": "Grundgehalt"
+        },
+        "family_bonus": {
+          "label": "Familienzuschlag"
+        },
+        "tax": {
+          "label": "Lohnsteuer"
+        },
+        "taxable_gross": {
+          "label": "Zu versteuerndes Einkommen (mtl.)"
+        },
+        "pension_insurance": {
+          "label": "Rentenversicherung (RV)"
+        },
+        "health_insurance": {
+          "label": "Krankenversicherung (KV-G)"
+        },
+        "care_insurance": {
+          "label": "Pflegeversicherung (PV-G)"
+        },
+        "unemployment_insurance": {
+          "label": "Arbeitslosenvers. (AV)"
+        },
+        "net": {
+          "label": "Netto-Verdienst"
+        },
+        "ag_subsidy_kv": {
+          "label": "AG-Zuschuss (PKV-KV)"
+        },
+        "ag_subsidy_pv": {
+          "label": "AG-Zuschuss (PKV-PV)"
+        },
+        "retirement_gap": {
+          "label": "Altersvorsorge (Lücke)"
+        },
+        "pension": {
+          "label": "ETF Depot Vorsorge",
+          "beamter": "Inkludiert",
+          "beamterSub": "Pension",
+          "employeeSub": "ETF Sparrate"
+        },
+        "health": {
+          "label": "PKV / Zusatz-KV",
+          "beamterSub30": "30% Beamter Restkosten",
+          "beamterSub50": "50% Beamter Restkosten",
+          "employeeSub": "100% (minus AG-Zuschuss)"
+        },
+        "pv": {
+          "label": "Pflegeversicherung (Privat)",
+          "beamterSub30": "30% Beamter Restkosten",
+          "beamterSub50": "50% Beamter Restkosten",
+          "employeeSub": "Gesetzlicher Anteil"
+        },
+        "bu": {
+          "label": "Dienstunfähigkeit (BU)",
+          "beamter": "Teil-Abgesichert",
+          "beamterSub": "RU/DU Schutz",
+          "employeeSub": "BU-Versicherung"
+        },
+        "disposable": {
+          "label": "Verfügbares Einkommen"
+        }
+      },
+      "sections": {
+        "gross": "1. Brutto",
+        "social": "2. Sozialabgaben",
+        "health": "3. Kranken- & Pflegeversicherung",
+        "taxes": "4. Steuern",
+        "additional": "5. Private Vorsorge"
+      }
+    },
+    "retirement": {
+      "title": "Retirement Projection",
+      "subtitle": "Status nach 40 Dienstjahren (Schätzung)",
+      "beamterLabel": "PROJ. MONATSPENSION (BEAMTER, NETTO)",
+      "beamterDescription": "Basierend auf 71,75 % des letzten Bruttogehaltes, abzüglich Einkommensteuer (2025-Tarif).",
+      "employeeTotalLabel": "TOTALE MONATL. ABSICHERUNG (ANG., NETTO)",
+      "employeeGesetzlichLabel": "Gesetzliche Rente (Netto, RP-Modell)",
+      "employeePrivateLabel": "ETF Entnahme (4% SWR, inkl. 25% KapSt.)",
+      "employeeCapitalLabel": "ANSPAR-KAPITAL (ETF)",
+      "employeeCapitalDescription": "Gesamtkapital im Depot nach 40 Jahren ({rate}% p.a. Rendite)."
+    }
+  },
+  "footer": {
+    "disclaimer": "HINWEIS: Diese Modellberechnung basiert auf dem Bundesbesoldungsgesetz 2024/25. Regionale Unterschiede in {location} wurden approximiert. Die Altersvorsorge simuliert einen ETF-Sparplan (40 Jahre Anspardauer, 4% Entnahmerate inkl. 25% Kapitalertragssteuer), um die Lücke zur Beamtenpension (Ziel: 71,75%) zu schließen.",
+    "exportButton": "PDF Export",
+    "shareButton": "Teilen",
+    "etfSubtext": "Simulierter Sparplan zur Deckung der Pensionslücke.",
+    "legal": "Impressum & Datenschutz"
+  },
+  "legal": {
+    "title": "Impressum",
+    "operator": "Betreiber",
+    "contact": "Kontakt",
+    "disclaimerTitle": "Haftungsausschluss",
+    "disclaimerText": "Die Inhalte dieser App wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Die Nutzung der Inhalte der Website erfolgt auf eigene Gefahr des Nutzers.",
+    "privacyTitle": "Datenschutz",
+    "privacyText": "Diese Anwendung speichert keine personenbezogenen Daten auf Servern. Alle Berechnungen erfolgen lokal in Ihrem Browser. Einstellungen werden lediglich in der URL gespeichert, um das Teilen zu ermöglichen."
+  },
+  "shareToast": "Link kopiert!",
+  "welcome": {
+    "title": "Wichtiger Hinweis",
+    "message": "Dieses Tool befindet sich aktuell in der Entwicklung. Die Berechnungen dienen der Orientierung und stellen ausdrücklich keine Steuer- oder Finanzberatung dar.",
+    "cta": "Verstanden"
+  }
+}

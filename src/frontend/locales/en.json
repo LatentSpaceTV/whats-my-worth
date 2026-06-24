@@ -1,0 +1,310 @@
+{
+  "header": {
+    "title": "What's my worth?",
+    "subtitle": "",
+    "tabs": {
+      "beamterToEmployee": "Civil Servant ⮕ Employee",
+      "employeeToBeamter": "Employee ⮕ Civil Servant",
+      "careerPath": "Career Path"
+    }
+  },
+  "form": {
+    "entgeltGroup": "Salary Grade (TV-L)",
+    "besoldungGroup": "Salary Grade (Civil Servant)",
+    "besoldungGroupHint": "Determined by your office and position (e.g., A13).",
+    "step": "Step",
+    "stepHint": "Experience steps increase with years of service.",
+    "stepLabel": "Step",
+    "grossBaseLabel": "Base Salary (Gross)",
+    "familienzuschlag": "Family Allowance",
+    "employer": "Employer",
+    "employerHint": "Determines Beihilfe rules and salary tables (e.g., Federal, State).",
+    "mietstufe": "Rent Level",
+    "mietstufeHint": "Affects family allowance based on regional living costs.",
+    "maritalStatus": "Marital Status",
+    "maritalStatusHint": "Married civil servants receive a higher family allowance.",
+    "maritalOptions": {
+      "married": "Married",
+      "single": "Single"
+    },
+    "children": "Children",
+    "childrenHint": "Affects family allowance and Beihilfe rate (from the 2nd child).",
+    "childrenLabel": "Children",
+    "pkvLabel": "Private Health Ins. Premium (100%)",
+    "etfRateLabel": "ETF Return (p.a.)",
+    "etfRateHint": "Expected annual return to cover the pension gap (Conservative ~4%).",
+    "customBonusLabel": "Other Allowances (monthly)",
+    "customBonusHint": "Job-related or performance bonuses (e.g., structural allowance).",
+    "companyPensionLabel": "Company Pension (monthly)",
+    "companyPensionHint": "Monthly employee contribution to deferred compensation in employment.",
+    "sections": {
+      "position": "Position & Status",
+      "health": "Health Insurance",
+      "retirement": "Retirement Planning"
+    },
+    "career": {
+      "pathLabel": "Career Path / Position",
+      "pathInfo": "Progression through all steps of the selected group.",
+      "title": "Lifetime Career Comparison",
+      "subtitle": "Cumulative disposable income over 40 years",
+      "beamterLabel": "Civil Servant (Career)",
+      "employeeLabel": "Employee (Career)",
+      "xAxisLabel": "Year of Service",
+      "yAxisLabel": "Cumulative (Euro)",
+      "disclaimer": "Progression is conservative within the selected salary grade.",
+      "lifetimeLabel": "Total Lifetime Earnings (Net)",
+      "statusLabel": "Status",
+      "averageLabel": "∅ Yearly (Net)",
+      "matchedLabel": "Comparison Group"
+    },
+    "pkv": {
+      "label": "Protection (Health Ins. + Care)",
+      "hint": "Select a coverage package for your private insurance.",
+      "options": {
+        "basis": "Basis",
+        "standard": "Standard",
+        "premium": "Premium",
+        "voluntaryGkv": "Voluntary GKV",
+        "individual": "Individual (Custom)"
+      },
+      "freeKids": "Kids co-insured",
+      "adultLabel": "Adult",
+      "kidLabel": "Kid",
+      "adultHealth": "Adult Health Insurance",
+      "adultCare": "Adult Care Insurance",
+      "kidHealth": "Health Ins. per Child",
+      "kidCare": "Care per Child",
+      "preview": "Detail Preview",
+      "adultHealthHint": "Your monthly private health insurance premium (before Beihilfe).",
+      "adultCareHint": "Your monthly private long-term care insurance premium (before Beihilfe).",
+      "kidHealthHint": "Monthly private health insurance premium per child (before Beihilfe).",
+      "kidCareHint": "Monthly private long-term care insurance premium per child (before Beihilfe).",
+      "previewHealth": "Health Ins.",
+      "previewCare": "Care (PV)",
+      "previewTotal": "Total",
+      "previewAdult": "Adult",
+      "previewKidN": "Child {n}",
+      "previewSum": "Sum",
+      "previewKid": "Child"
+    },
+    "careerPaths": {
+      "hoher": {
+        "title": "🟥 Executive Service (hD)",
+        "roles": [
+          { "label": "Councilor / Councilor / Government Councilor" },
+          { "label": "Government Councilor (hD) / Senior Teacher" },
+          { "label": "Government Director / High School Principal" },
+          { "label": "Senior Gov. Director / Headmaster" },
+          { "label": "Judge / Prosecutor R1" },
+          { "label": "Judge / Prosecutor R2" },
+          { "label": "Ministerial Councilor B2" },
+          { "label": "Ministerial Director B3" }
+        ]
+      },
+      "gehobener": {
+        "title": "🟨 Senior Service (gD)",
+        "roles": [
+          { "label": "Administrative Inspector / Tax Inspector" },
+          { "label": "Senior Inspector / Police Commissioner" },
+          { "label": "Superintendent / Senior Tax Inspector" },
+          { "label": "Principal Superintendent / Teacher (Elementary)" },
+          { "label": "Senior Principal Superintendent" }
+        ]
+      },
+      "mittlerer": {
+        "title": "🟦 Mid-Level Service (mD)",
+        "roles": [
+          { "label": "Police Officer / Judicial Clerk" },
+          { "label": "Senior Police Officer / Clerk" },
+          { "label": "Police Chief Master / Senior Clerk" }
+        ]
+      }
+    },
+    "breakdown": {
+      "grossNetBase": "Basic Salary (Net-Base)",
+      "allowances": "Allowances (Family & Location)",
+      "pkvDeduction": "Health Insurance Deduction",
+      "disposableIncome": "Disposable Net"
+    },
+    "benefitsTitle": "Civil Servant Benefits",
+    "benefitsList": [
+      "Job Security (Lifetime Tenure)",
+      "State Aid Entitlement (50-70%)",
+      "Family Allowance Included"
+    ]
+  },
+  "results": {
+    "hero": {
+      "titleBeamter": "Required Equivalent (Civil Servant)",
+      "titleEmployee": "Required Gross (Employee)",
+      "yearSuffix": "/ year",
+      "description": "To achieve the same quality of life and private retirement planning.",
+      "factorLabel": "Gross Factor",
+      "factorSubtext": "Relative to civil servant pay",
+      "entgeltGroupLabel": "Approx. Salary Grade",
+      "entgeltGroupSource": "(TV-L)"
+    },
+    "heatmap": {
+      "title": "Salary Comparison Heatmap (Absolute Net Distance)",
+      "subtitle": "Shows the absolute difference (disposable income distance) between each civil servant grade/step and your current employee net. Lower numbers represent a more precise match.",
+      "legend": {
+        "lower": "Excellent (≤ 150 € distance)",
+        "match": "Good match (150 € - 300 €)",
+        "higher": "Moderate distance (300 € - 600 €)",
+        "na": "Unassigned",
+        "bestMatch": "Best Match",
+        "large": "Large distance (> 600 €)"
+      },
+      "selectedDetails": "Selected Step",
+      "details": {
+        "noDetails": "No details available",
+        "basicGross": "Basic Gross Salary",
+        "familyAllowance": "Family Allowance",
+        "tax": "Income Tax (monthly)",
+        "healthCare": "Health & Care Insurance",
+        "payoutNet": "Net Payout Amount",
+        "disposableNet": "Disposable Net",
+        "comparisonLabel": "Comparison to Employee",
+        "gainText": "This civil servant offer provides a higher disposable net income.",
+        "lossText": "You would experience a loss in disposable income."
+      }
+    },
+    "charts": {
+      "distributionTitle": "Employee Gross Distribution",
+      "structureTitle": "Cost Structure",
+      "structureLegend": {
+        "beamter": "Civil Servant",
+        "employee": "Employee"
+      },
+      "pieLabels": {
+        "net": "Net Earnings",
+        "social": "Social Contributions",
+        "tax": "Taxes",
+        "pkv": "Health Insurance",
+        "pension": "ETF Portfolio",
+        "kv": "Health Insurance",
+        "pv": "Care Insurance",
+        "rv": "Pension Reserve",
+        "av": "Unemployment Ins."
+      }
+    },
+    "table": {
+      "title": "Monthly Breakdown",
+      "subtitle": "Equivalent Provision",
+      "columns": {
+        "category": "Category",
+        "beamter": "Civil Servant",
+        "employee": "Employee"
+      },
+      "rows": {
+        "gross": {
+          "label": "Gross Salary (Monthly)"
+        },
+        "base_salary": {
+          "label": "Base Salary"
+        },
+        "family_bonus": {
+          "label": "Family Bonus"
+        },
+        "tax": {
+          "label": "Income Tax"
+        },
+        "taxable_gross": {
+          "label": "Taxable Income (monthly)"
+        },
+        "pension_insurance": {
+          "label": "Pension Insurance (RV)"
+        },
+        "health_insurance": {
+          "label": "Health Insurance (KV-G)"
+        },
+        "care_insurance": {
+          "label": "Care Insurance (PV-G)"
+        },
+        "unemployment_insurance": {
+          "label": "Unemployment Ins. (AV)"
+        },
+        "net": {
+          "label": "Net Earnings"
+        },
+        "ag_subsidy_kv": {
+          "label": "Employer Subsidy (PHI-HI)"
+        },
+        "ag_subsidy_pv": {
+          "label": "Employer Subsidy (PHI-PI)"
+        },
+        "retirement_gap": {
+          "label": "Retirement Provision (Gap)"
+        },
+        "pension": {
+          "label": "ETF Portfolio Provision",
+          "beamter": "Included",
+          "beamterSub": "Pension",
+          "employeeSub": "ETF Savings Rate"
+        },
+        "health": {
+          "label": "PHI / Supplemental HI",
+          "beamterSub30": "30% Beamter remaining costs",
+          "beamterSub50": "50% Beamter remaining costs",
+          "employeeSub": "100% (minus Employer Subsidy)"
+        },
+        "pv": {
+          "label": "Care Insurance (Private)",
+          "beamterSub": "Included in PHI",
+          "beamterSub30": "30% Beamter remaining costs",
+          "beamterSub50": "50% Beamter remaining costs",
+          "employeeSub": "Statutory Share"
+        },
+        "bu": {
+          "label": "Occupational Disability (BU)",
+          "beamter": "Partially Secured",
+          "beamterSub": "RU/DU Protection",
+          "employeeSub": "BU Insurance"
+        },
+        "disposable": {
+          "label": "Disposable Income"
+        }
+      },
+      "sections": {
+        "gross": "1. Gross",
+        "social": "2. Social Contributions",
+        "health": "3. Health & Care Insurance",
+        "taxes": "4. Taxes",
+        "additional": "5. Private Provision"
+      }
+    },
+    "retirement": {
+      "title": "Retirement Projection",
+      "subtitle": "Status after 40 years of service (Estimation)",
+      "beamterLabel": "PROJ. MONTHLY PENSION (CIVIL SERVANT, NET)",
+      "beamterDescription": "Based on 71.75% of final gross salary, minus income tax (2025 tariff).",
+      "employeeTotalLabel": "TOTAL MONTHLY COVERAGE (EMP., NET)",
+      "employeeGesetzlichLabel": "Statutory Pension (Net, RP model)",
+      "employeePrivateLabel": "ETF Withdrawal (4% SWR, incl. 25% Cap. Gains Tax)",
+      "employeeCapitalLabel": "SAVINGS CAPITAL (ETF)",
+      "employeeCapitalDescription": "Total capital in portfolio after 40 years ({rate}% p.a. return)."
+    }
+  },
+  "footer": {
+    "disclaimer": "NOTE: This model calculation is based on the Federal Salary Act 2024/25. Regional differences in {location} were approximated. Retirement planning simulates an ETF savings plan (40 years duration, 4% withdrawal rate incl. 25% capital gains tax) to close the gap to the civil servant pension (Target: 71.75%).",
+    "exportButton": "PDF Export",
+    "shareButton": "Share",
+    "etfSubtext": "Simulated savings plan to cover the pension gap.",
+    "legal": "Legal Notice & Privacy"
+  },
+  "legal": {
+    "title": "Legal Notice",
+    "operator": "Operator",
+    "contact": "Contact",
+    "disclaimerTitle": "Disclaimer",
+    "disclaimerText": "The contents of this app were created with the greatest possible care. However, no guarantee can be given for the accuracy, completeness, and timeliness of the contents. Use of the website contents is at the user's own risk.",
+    "privacyTitle": "Privacy Policy",
+    "privacyText": "This application does not store any personal data on servers. All calculations are performed locally in your browser. Settings are only stored in the URL to enable sharing."
+  },
+  "shareToast": "Link copied!",
+  "welcome": {
+    "title": "Important Note",
+    "message": "This tool is currently under development. The calculations serve as a guide and explicitly do not represent tax or financial advice.",
+    "cta": "Understood"
+  }
+}
