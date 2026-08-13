@@ -2,13 +2,19 @@
  * Beamte specific calculator logic.
  */
 import { CalculationResult } from '../data/types';
-import { HOMETOWN_MIETSTUFEN, MARRIED_BONUS } from '../data/beamte';
-import { BESOLDUNG_TABLE, FAMILY_BONUS_TABLE } from '../data/beamte';
+import { HOMETOWN_MIETSTUFEN, EHE_BONUS, CHILD_BONUS_TABLE } from '../data/beamte';
+import { BESOLDUNG_TABLE } from '../data/beamte';
 import { calculateTax } from './tax';
 
 /**
  * Calculates the monthly family allowance (Familienzuschlag) for civil servants.
  * Accounts for marital status, number of children, and regional cost-of-living adjustments (Mietstufe).
+ * Based on official NRW 2026 Familienzuschlag tables (gültig: 01.04.2026 - 28.02.2027).
+ * 
+ * Structure:
+ * - Only the Ehe bonus applies when the civil servant is married.
+ * - There is no separate base Familienzuschlag beyond the marriage bonus.
+ * - Child bonuses (CHILD_BONUS_TABLE): start from 2nd child (1st child covered by Ehe bonus)
  * 
  * @param children - Number of children
  * @param isMarried - Marital status
@@ -17,43 +23,38 @@ import { calculateTax } from './tax';
  * @returns Monthly allowance in Euros
  */
 export function getFamilienzuschlag(children: number, isMarried: boolean, mietstufe: number, entgeltgruppe: string): number {
+  if (!isMarried) return 0;
+
   let total = 0;
   const group = entgeltgruppe.toUpperCase();
   
-  // Married bonus
-  if (isMarried) {
-    if (['A5', 'A6'].includes(entgeltgruppe)) {
-      total += MARRIED_BONUS['A5_A6'];
-    }
-    else if (['A7', 'A8'].includes(entgeltgruppe)) {
-      total += MARRIED_BONUS['A7_A8'];
-    }
-    else {
-      total += MARRIED_BONUS['OTHER'];
-    }
-  }
-
-  // Determine the appropriate bonus table based on entgeltgruppe
-  let bonusTable: Record<number, number[]>;
-  if (['A5'].includes(group)) {
-    bonusTable = FAMILY_BONUS_TABLE['A5'];
-  } else if (['A6'].includes(group)) {
-    bonusTable = FAMILY_BONUS_TABLE['A6'];
+  // Determine grade group for bonus lookup
+  let baseBonusKey: 'A5_A6' | 'A7_A8' | 'OTHER';
+  let childTableKey: 'A5' | 'A6' | 'A7_A8' | 'OTHER';
+  
+  if (['A5', 'A6'].includes(group)) {
+    baseBonusKey = 'A5_A6';
+    childTableKey = group as 'A5' | 'A6';
   } else if (['A7', 'A8'].includes(group)) {
-    bonusTable = FAMILY_BONUS_TABLE['A7_A8'];
+    baseBonusKey = 'A7_A8';
+    childTableKey = 'A7_A8';
   } else {
-    bonusTable = FAMILY_BONUS_TABLE['OTHER'];
+    baseBonusKey = 'OTHER';
+    childTableKey = 'OTHER';
   }
   
-  const steps = bonusTable[mietstufe] || [];
+  // Only the married supplement applies.
+  total += EHE_BONUS[baseBonusKey];
   
-  // Add child bonuses
-  if (children >= 1 && steps.length > 0) total += steps[0];
-  if (children >= 2 && steps.length > 1) total += steps[1];
-  if (children >= 3 && steps.length > 2) total += steps[2];
-  if (children >= 4 && steps.length > 3) total += steps[3];
-  if (children > 4 && steps.length > 4) {
-    total += steps[4] * (children - 4);
+  // Child bonuses start from 2nd child (1st child covered by Ehe bonus)
+  const childTable = CHILD_BONUS_TABLE[childTableKey];
+  const steps = childTable[mietstufe] || [];
+  
+  if (children >= 2 && steps.length > 0) total += steps[0];     // 2nd child
+  if (children >= 3 && steps.length > 1) total += steps[1];     // 3rd child
+  if (children >= 4 && steps.length > 2) total += steps[2];     // 4th child
+  if (children > 4 && steps.length > 3) {
+    total += steps[3] * (children - 4);                          // 5th+ children
   }
   
   return total;
@@ -62,6 +63,7 @@ export function getFamilienzuschlag(children: number, isMarried: boolean, mietst
 /**
  * Determines the entry-level salary step for a given Besoldung grade.
  * Grades like A5-A11 typically start at step 3, while higher grades start later.
+ * Based on official NRW 2026 Besoldung tables (gültig: 01.04.2026 - 28.02.2027).
  * 
  * @param group - Besoldung grade (e.g., 'A13')
  * @returns The starting step number
