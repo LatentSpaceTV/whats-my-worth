@@ -1,6 +1,6 @@
 {
-  "name": "What's my worth?",
-  "description": "Was muss ich verdienen, wenn ich in die Wirthschaft wechsle?",
+  "name": "What's My Worth",
+  "description": "Gehaltsvergleich zwischen Beamten- und Privatsektor in Deutschland",
   "requestFramePermissions": [],
   "majorCapabilities": []
 }

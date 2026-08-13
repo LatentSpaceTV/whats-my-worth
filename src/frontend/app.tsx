@@ -5,6 +5,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import pkg from '../../package.json';
 import { 
   Calculator, 
   Share2,
@@ -32,6 +33,8 @@ import { TranslationProvider, useTranslation } from './lib/i18n';
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+const appVersion = pkg.version.split('.').slice(0, 2).join('.');
 
 type TabType = 'beamterToEmployee' | 'employeeToBeamter';
 
@@ -455,7 +458,7 @@ function AppContent() {
                   {t('footer.legal')}
                 </button>
                 <span className="text-[10px] font-bold text-slate-300">|</span>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Build v1.2.6</span>
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Build v{appVersion}</span>
               </div>
           </div>
         </footer>
