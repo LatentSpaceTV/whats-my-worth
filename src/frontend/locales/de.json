@@ -68,8 +68,8 @@
         "individual": "Individual (Benutzerdefiniert)"
       },
       "freeKids": "Kinder kostenfrei",
-      "adultLabel": "Erw",
-      "kidLabel": "Kind",
+      "adultLabel": "Beamten Beihilfe",
+      "kidLabel": "Kinder Beihilfe",
       "adultHealth": "Krankenvers. Erwachsener",
       "adultCare": "Pflege Erwachsener",
       "kidHealth": "Krankenvers. pro Kind",
@@ -244,14 +244,14 @@
         },
         "health": {
           "label": "PKV / Zusatz-KV",
-          "beamterSub30": "30% Beamter Restkosten",
-          "beamterSub50": "50% Beamter Restkosten",
+          "beamterSub30": "70% Beamter Beihilfe",
+          "beamterSub50": "50% Beamter Beihilfe",
           "employeeSub": "100% (minus AG-Zuschuss)"
         },
         "pv": {
           "label": "Pflegeversicherung (Privat)",
-          "beamterSub30": "30% Beamter Restkosten",
-          "beamterSub50": "50% Beamter Restkosten",
+          "beamterSub30": "70% Beamter Beihilfe",
+          "beamterSub50": "50% Beamter Beihilfe",
           "employeeSub": "Gesetzlicher Anteil"
         },
         "bu": {
@@ -285,7 +285,7 @@
     }
   },
   "footer": {
-    "disclaimer": "HINWEIS: Diese Modellberechnung basiert auf dem Bundesbesoldungsgesetz 2024/25. Regionale Unterschiede in {location} wurden approximiert. Die Altersvorsorge simuliert einen ETF-Sparplan (40 Jahre Anspardauer, 4% Entnahmerate inkl. 25% Kapitalertragssteuer), um die Lücke zur Beamtenpension (Ziel: 71,75%) zu schließen.",
+    "disclaimer": "HINWEIS: Diese Modellberechnung basiert auf dem Bundesbesoldungsgesetz 2026. Regionale Unterschiede in {location} wurden approximiert. Die Altersvorsorge simuliert einen ETF-Sparplan (40 Jahre Anspardauer, 4% Entnahmerate inkl. 25% Kapitalertragssteuer), um die Lücke zur Beamtenpension (Ziel: 71,75%) zu schließen.",
     "exportButton": "PDF Export",
     "shareButton": "Teilen",
     "etfSubtext": "Simulierter Sparplan zur Deckung der Pensionslücke.",
