@@ -365,13 +365,13 @@ export const BeamterToEmployeeTab: React.FC<SharedStateProps> = (props) => {
                 <td className="px-4 py-1.5 text-slate-900 font-bold">{formatEuro(currentResult.base.baseGross)}</td>
                 <td className="px-4 py-1.5 text-slate-900 font-bold">{formatEuro(currentResult.main.gross)}</td>
               </tr>
-              {currentResult.base.bonuses.familie > 0 && (
-                <tr>
-                  <td className="px-4 py-1.5 text-slate-600 pl-8">{t('results.table.rows.family_bonus.label')}</td>
-                  <td className="px-4 py-1.5 text-emerald-600 font-bold">+ {formatEuro(currentResult.base.bonuses.familie)}</td>
-                  <td className="px-4 py-1.5 text-slate-400">0,00 €</td>
-                </tr>
-              )}
+              <tr>
+                <td className="px-4 py-1.5 text-slate-600 pl-8">{t('results.table.rows.family_bonus.label')}</td>
+                <td className={`px-4 py-1.5 font-bold ${currentResult.base.bonuses.familie > 0 ? 'text-emerald-600' : 'text-slate-400'}`}>
+                  {currentResult.base.bonuses.familie > 0 ? `+ ${formatEuro(currentResult.base.bonuses.familie)}` : formatEuro(0)}
+                </td>
+                <td className="px-4 py-1.5 text-slate-400">0,00 €</td>
+              </tr>
               {currentResult.main.agZuschuss && currentResult.main.agZuschuss.kv > 0 && (
                 <tr>
                   <td className="px-4 py-1.5 text-slate-600 pl-8 italic">{t('results.table.rows.ag_subsidy_kv.label')}</td>
@@ -441,7 +441,7 @@ export const BeamterToEmployeeTab: React.FC<SharedStateProps> = (props) => {
                   - {formatEuro(pkvBreakdown.adultPkvReduced + pkvBreakdown.kidPkvReducedTotal)} 
                   <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">{children >= 2 ? t('results.table.rows.health.beamterSub30') : t('results.table.rows.health.beamterSub50')}</span>
                   {children > 0 && (
-                    <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">20% {t('form.pkv.kidLabel')}</span>
+                    <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">80% {t('form.pkv.kidLabel')}</span>
                     )
                   }
                 </td>
@@ -459,7 +459,7 @@ export const BeamterToEmployeeTab: React.FC<SharedStateProps> = (props) => {
                     - {formatEuro(pkvBreakdown.adultPflegeReduced + pkvBreakdown.kidPflegeReducedTotal)} 
                     <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">{children >= 2 ? t('results.table.rows.health.beamterSub30') : t('results.table.rows.health.beamterSub50')}</span>
                     {children > 0 && (
-                      <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">20% {t('form.pkv.kidLabel')}</span>
+                      <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">80% {t('form.pkv.kidLabel')}</span>
                       )
                     }
                   </td>

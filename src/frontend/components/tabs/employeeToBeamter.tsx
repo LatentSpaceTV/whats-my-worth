@@ -619,12 +619,12 @@ export const EmployeeToBeamterTab: React.FC<SharedStateProps> = (props) => {
                         <span className="text-slate-500 font-medium">{t('results.heatmap.details.basicGross')}</span>
                         <span className="font-bold text-slate-800">{formatEuro(details.baseGross)}</span>
                       </div>
-                      {details.bonuses.familie > 0 && (
-                        <div className="flex justify-between items-center text-[11px] border-b border-slate-200/50 pb-1">
-                          <span className="text-slate-500 font-medium">{t('results.heatmap.details.familyAllowance')}</span>
-                          <span className="font-bold text-indigo-600">+ {formatEuro(details.bonuses.familie)}</span>
-                        </div>
-                      )}
+                      <div className="flex justify-between items-center text-[11px] border-b border-slate-200/50 pb-1">
+                        <span className="text-slate-500 font-medium">{t('results.heatmap.details.familyAllowance')}</span>
+                        <span className={`font-bold ${details.bonuses.familie > 0 ? 'text-indigo-600' : 'text-slate-400'}`}>
+                          {details.bonuses.familie > 0 ? `+ ${formatEuro(details.bonuses.familie)}` : formatEuro(0)}
+                        </span>
+                      </div>
                       <div className="flex justify-between items-center text-[11px] border-b border-slate-200/50 pb-1">
                         <span className="text-slate-500 font-medium">{t('results.heatmap.details.tax')}</span>
                         <span className="font-bold text-red-500">- {formatEuro(details.tax)}</span>
@@ -692,13 +692,13 @@ export const EmployeeToBeamterTab: React.FC<SharedStateProps> = (props) => {
                 <td className="px-4 py-1.5 text-slate-900 font-bold">{formatEuro(currentResult.main.baseGross)}</td>
                 <td className="px-4 py-1.5 text-slate-900 font-bold">{formatEuro(currentResult.base.gross)}</td>
               </tr>
-              {currentResult.main.bonuses.familie > 0 && (
-                <tr>
-                   <td className="px-4 py-1.5 text-slate-600 pl-8">{t('results.table.rows.family_bonus.label')}</td>
-                   <td className="px-4 py-1.5 text-emerald-600 font-bold text-left">+ {formatEuro(currentResult.main.bonuses.familie)}</td>
-                   <td className="px-4 py-1.5 text-slate-400">0,00 €</td>
-                </tr>
-              )}
+              <tr>
+                <td className="px-4 py-1.5 text-slate-600 pl-8">{t('results.table.rows.family_bonus.label')}</td>
+                <td className={`px-4 py-1.5 font-bold text-left ${currentResult.main.bonuses.familie > 0 ? 'text-emerald-600' : 'text-slate-400'}`}>
+                  {currentResult.main.bonuses.familie > 0 ? `+ ${formatEuro(currentResult.main.bonuses.familie)}` : formatEuro(0)}
+                </td>
+                <td className="px-4 py-1.5 text-slate-400">0,00 €</td>
+              </tr>
               {currentResult.base.agZuschuss && currentResult.base.agZuschuss.kv > 0 && (
                 <tr>
                   <td className="px-4 py-1.5 text-slate-600 pl-8 italic">{t('results.table.rows.ag_subsidy_kv.label')}</td>

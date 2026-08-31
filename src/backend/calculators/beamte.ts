@@ -23,8 +23,6 @@ import { calculateTax } from './tax';
  * @returns Monthly allowance in Euros
  */
 export function getFamilienzuschlag(children: number, isMarried: boolean, mietstufe: number, entgeltgruppe: string): number {
-  if (!isMarried) return 0;
-
   let total = 0;
   const group = entgeltgruppe.toUpperCase();
   
@@ -43,18 +41,20 @@ export function getFamilienzuschlag(children: number, isMarried: boolean, mietst
     childTableKey = 'OTHER';
   }
   
-  // Only the married supplement applies.
-  total += EHE_BONUS[baseBonusKey];
+  // Ehe bonus: only if married
+  if (isMarried) {
+    total += EHE_BONUS[baseBonusKey];
+  }
   
-  // Child bonuses start from 2nd child (1st child covered by Ehe bonus)
+  // Child bonuses: apply regardless of marital status
   const childTable = CHILD_BONUS_TABLE[childTableKey];
   const steps = childTable[mietstufe] || [];
   
-  if (children >= 2 && steps.length > 0) total += steps[0];     // 2nd child
-  if (children >= 3 && steps.length > 1) total += steps[1];     // 3rd child
-  if (children >= 4 && steps.length > 2) total += steps[2];     // 4th child
-  if (children > 4 && steps.length > 3) {
-    total += steps[3] * (children - 4);                          // 5th+ children
+  if (children >= 1 && steps.length > 0) total += steps[0];     // 1st child
+  if (children >= 2 && steps.length > 1) total += steps[1];     // 2nd child
+  if (children >= 3 && steps.length > 2) total += steps[2];     // 3rd child
+  if (children > 3 && steps.length > 3) {
+    total += steps[3] * (children - 3);                          // 4th+ children
   }
   
   return total;
