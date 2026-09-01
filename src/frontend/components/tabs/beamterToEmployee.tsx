@@ -441,7 +441,7 @@ export const BeamterToEmployeeTab: React.FC<SharedStateProps> = (props) => {
                   - {formatEuro(pkvBreakdown.adultPkvReduced + pkvBreakdown.kidPkvReducedTotal)} 
                   <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">{children >= 2 ? t('results.table.rows.health.beamterSub30') : t('results.table.rows.health.beamterSub50')}</span>
                   {children > 0 && (
-                    <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">80% {t('form.pkv.kidLabel')}</span>
+                    <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">80% {t('form.pkv.kidReducedLabel')}</span>
                     )
                   }
                 </td>
@@ -459,7 +459,7 @@ export const BeamterToEmployeeTab: React.FC<SharedStateProps> = (props) => {
                     - {formatEuro(pkvBreakdown.adultPflegeReduced + pkvBreakdown.kidPflegeReducedTotal)} 
                     <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">{children >= 2 ? t('results.table.rows.health.beamterSub30') : t('results.table.rows.health.beamterSub50')}</span>
                     {children > 0 && (
-                      <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">80% {t('form.pkv.kidLabel')}</span>
+                      <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">80% {t('form.pkv.kidReducedLabel')}</span>
                       )
                     }
                   </td>

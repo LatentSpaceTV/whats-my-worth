@@ -68,8 +68,10 @@
         "individual": "Individual (Benutzerdefiniert)"
       },
       "freeKids": "Kinder kostenfrei",
-      "adultLabel": "Beamten Beihilfe",
-      "kidLabel": "Kinder Beihilfe",
+      "adultLabel": "Erwachsener",
+      "kidLabel": "Kinder",
+      "adultReducedLabel": "Beamten Beihilfe",
+      "kidReducedLabel": "Kinder Beihilfe",
       "adultHealth": "Krankenvers. Erwachsener",
       "adultCare": "Pflege Erwachsener",
       "kidHealth": "Krankenvers. pro Kind",

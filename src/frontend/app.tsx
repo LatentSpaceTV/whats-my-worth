@@ -41,7 +41,10 @@ type TabType = 'beamterToEmployee' | 'employeeToBeamter';
 function AppContent() {
   const { t, language, setLanguage } = useTranslation();
   const [activeTab, setActiveTab] = useState<TabType>('beamterToEmployee');
-  
+  // Guards the URL-sync effect so it doesn't overwrite the URL (and thus the
+  // tab) with default state before the initial URL load has been committed.
+  const [hasLoadedFromUrl, setHasLoadedFromUrl] = useState(false);
+
   // Beamter specific state
   const [besoldungGroup, setBesoldungGroup] = useState<string>('A13');
   const [besoldungStep, setBesoldungStep] = useState<number>(5);
@@ -154,10 +157,20 @@ function AppContent() {
 
     const cp = params.get('cp');
     if (cp) setCompanyPension(Number(cp));
+
+    // Mark the initial load as complete. This is a state update, so it only
+    // takes effect on the next render — by which point the tab/param state
+    // read from the URL has been committed and the sync effect below is safe
+    // to run without clobbering the URL.
+    setHasLoadedFromUrl(true);
   }, []);
 
   // Sync state to URL
   useEffect(() => {
+    // Skip until the initial URL load has been committed to state, otherwise
+    // we'd write the default tab back into the URL and override the link.
+    if (!hasLoadedFromUrl) return;
+
     const params = new URLSearchParams();
     params.set('tab', activeTab);
     params.set('bg', besoldungGroup);
@@ -181,7 +194,7 @@ function AppContent() {
     
     const newUrl = `${window.location.pathname}?${params.toString()}`;
     window.history.replaceState({ path: newUrl }, '', newUrl);
-  }, [activeTab, besoldungGroup, besoldungStep, entgeltGroup, entgeltStep, employeeGrossType, customEmployeeGross, pkvPlan, customPkvAdult, customPflegeAdult, customPkvKid, customPflegeKid, children, location, hometown, isMarried, etfRate, customBonus, companyPension]);
+  }, [hasLoadedFromUrl, activeTab, besoldungGroup, besoldungStep, entgeltGroup, entgeltStep, employeeGrossType, customEmployeeGross, pkvPlan, customPkvAdult, customPflegeAdult, customPkvKid, customPflegeKid, children, location, hometown, isMarried, etfRate, customBonus, companyPension]);
 
   const handleShare = useCallback(() => {
     const url = window.location.href;
@@ -277,16 +290,15 @@ function AppContent() {
                   <div className="space-y-4">
                     <h3 className="text-xs font-black text-indigo-600 uppercase tracking-widest">{t('legal.operator')}</h3>
                     <div className="text-sm text-slate-600 font-medium leading-relaxed bg-slate-50 p-5 rounded-3xl border border-slate-100 italic">
-                      Maximilian Schmidt FinTech e.K.<br />
-                      Rheinstraße 15b<br />
-                      50676 Köln, Deutschland
+                      Dr. Simon Koppers<br />
+                      Hauptstr. 18<br />
+                      52459 Inden, Deutschland
                     </div>
                   </div>
                   <div className="space-y-4">
                     <h3 className="text-xs font-black text-indigo-600 uppercase tracking-widest">{t('legal.contact')}</h3>
                     <div className="text-sm text-slate-600 font-medium leading-relaxed bg-slate-50 p-5 rounded-3xl border border-slate-100 italic">
-                      Email: kontakt@schmidt-finanzrechner.de<br />
-                      Web: www.schmidt-finanzrechner.de
+                      Email: LatentSpace@outlook.de<br />
                     </div>
                   </div>
                 </div>
@@ -385,25 +397,15 @@ function AppContent() {
             <div className="flex flex-col sm:flex-row items-center gap-4">
               {/* Language Switcher */}
               <div className="flex bg-slate-100 p-1 rounded-xl border border-slate-200 h-fit">
-                <button 
+                <button
                   onClick={() => setLanguage('de')}
                   className={cn(
                     "px-2 py-1 rounded-lg text-lg flex items-center justify-center transition-all duration-200",
-                    language === 'de' ? "bg-white shadow-sm scale-110" : "opacity-40 grayscale hover:opacity-100 hover:grayscale-0"
+                    "bg-white shadow-sm scale-110"
                   )}
                   title="Deutsch"
                 >
                   🇩🇪
-                </button>
-                <button 
-                  onClick={() => setLanguage('en')}
-                  className={cn(
-                    "px-2 py-1 rounded-lg text-lg flex items-center justify-center transition-all duration-200",
-                    language === 'en' ? "bg-white shadow-sm scale-110" : "opacity-40 grayscale hover:opacity-100 hover:grayscale-0"
-                  )}
-                  title="English"
-                >
-                  🇬🇧
                 </button>
               </div>
 

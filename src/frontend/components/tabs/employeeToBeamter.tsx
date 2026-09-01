@@ -774,8 +774,11 @@ export const EmployeeToBeamterTab: React.FC<SharedStateProps> = (props) => {
               <tr>
                 <td className="px-4 py-1.5 text-slate-600 pl-8">{t('results.table.rows.health.label')}</td>
                 <td className="px-4 py-1.5 text-red-500">
-                  - {formatEuro(pkvBreakdown.adultPkvReduced + pkvBreakdown.kidPkvReducedTotal)} 
+                  - {formatEuro(pkvBreakdown.adultPkvReduced + pkvBreakdown.kidPkvReducedTotal)}
                   <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">{children >= 2 ? t('results.table.rows.health.beamterSub30') : t('results.table.rows.health.beamterSub50')}</span>
+                  {children > 0 && (
+                    <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">80% {t('form.pkv.kidReducedLabel')}</span>
+                  )}
                 </td>
                 <td className="px-4 py-1.5 text-red-500">
                    {currentResult.base.pkvFull ? `- ${formatEuro(currentResult.base.pkvFull)}` : '0,00 €'}
@@ -787,8 +790,11 @@ export const EmployeeToBeamterTab: React.FC<SharedStateProps> = (props) => {
               <tr>
                 <td className="px-4 py-1.5 text-slate-600 pl-8">{t('results.table.rows.pv.label')}</td>
                 <td className="px-4 py-1.5 text-red-500">
-                  - {formatEuro(pkvBreakdown.adultPflegeReduced + pkvBreakdown.kidPflegeReducedTotal)} 
-                  <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">{t('results.table.rows.pv.beamterSub')}</span>
+                  - {formatEuro(pkvBreakdown.adultPflegeReduced + pkvBreakdown.kidPflegeReducedTotal)}
+                  <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">{children >= 2 ? t('results.table.rows.pv.beamterSub30') : t('results.table.rows.pv.beamterSub50')}</span>
+                  {children > 0 && (
+                    <span className="text-[10px] font-medium text-slate-400 block tracking-tight leading-tight mt-0.5">80% {t('form.pkv.kidReducedLabel')}</span>
+                  )}
                 </td>
                 <td className="px-4 py-1.5 text-red-500">
                   {currentResult.base.pkvPvFull ? `- ${formatEuro(currentResult.base.pkvPvFull)}` : '0,00 €'}

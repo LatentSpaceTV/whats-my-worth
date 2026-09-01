@@ -18,10 +18,11 @@ const translations: Record<Language, any> = {
 const TranslationContext = createContext<TranslationContextType | undefined>(undefined);
 
 export const TranslationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem('app_language');
-    return (saved as Language) || 'de';
-  });
+  // English support is temporarily disabled — always use German.
+  const [language] = useState<Language>('de');
+  const setLanguage = (_lang: Language) => {
+    // No-op: language switching is disabled for now.
+  };
 
   useEffect(() => {
     localStorage.setItem('app_language', language);
